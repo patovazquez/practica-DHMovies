@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle</title>
+</head>
+
+<!-- header -->
+<%- include('partials/header', {title: 'Movies'}) %>
+<!-- fin header -->
+
+<body>
+    <% if (typeof errors != 'undefined') { %>
+        <div>
+        <p style="color: red; font-size: medium;">ERROR </p>
+        
+           <% for( let i = 0; i < errors.length; i++ ) { %>
+              <p style="font-size: small;font-weight: bold; color: white;">| <%= errors[i].msg %> |</p>
+           
+           <% } %>
+        </div>
+       <% } %>
+    <div class= "create">
+    <form action="/movies/edit/<%= oneMovie.id%>/?_method=PUT" method="POST" class= "create"> 
+        
+        <label for="Title">Titulo</label>
+        <input type="text" name= "title" value="<%= oneMovie.title%>">
+        <label for="Rating">Rating</label>
+        <input type="text" name= "rating" value="<%= oneMovie.rating%>">
+        <label for="awards">Premios</label>
+        <input type="text" name= "awards"value="<%= oneMovie.awards%>">
+        <label for="Length">Duración</label>
+        <input type="text" name= "length"value="<%= oneMovie.length%>">
+        <label for="Date">Fecha de Estreno</label>
+        <input type="date" name= "release_date" value="<%= fecha%>">
+        
+        <label for="Genre">Genero</label>
+        <select name="genre_id">
+            <% generos.forEach(genero => { %>
+                <%if (oneMovie.genre_id === genero.id) { %>
+                    
+                    <option value= <%= genero.id %> selected> <%= genero.name %> </option>                
+                    <% }else { %>
+                    
+                    <option value= <%= genero.id %> > <%= genero.name %> </option>
+                    <% } }); %>
+        </select>
+
+        <label for="">Actores</label>
+        <select name="actores" multiple class= "multiple">
+            <% actores.forEach(actor => { %>
+                <% if (oneMovie.actores.some(actorPelicula => actorPelicula.id === actor.id)) { %>
+                    <option value= "<%= actor.id %>" selected> <%= actor.first_name %> <%= actor.last_name %> </option>
+                <% }else{ %>
+                <option value= "<%= actor.id %>"> <%= actor.first_name %> <%= actor.last_name %> </option>                
+                
+           <% } }); %>
+        </select>
+
+        <button type="submit">Guardar Pelicula</button>
+
+    </form>
+    </div>
+</body>
+</html>

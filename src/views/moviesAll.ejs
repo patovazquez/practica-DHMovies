@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Movies</title>
+</head>
+<!-- header -->
+<%- include('partials/header', {title: 'Movies'}) %>
+<!-- fin header -->
+
+<body>
+    <h1>Catalogo</h1>
+    <ul>
+        <% movies.forEach(movie => { %>
+            <li> <a href="/movies/detail/<%=movie.id%>" class= "ali">
+                <%= movie.title%>
+            </a>
+            </li>
+            
+        <% }); %>
+    </ul>
+</body>
+</html>

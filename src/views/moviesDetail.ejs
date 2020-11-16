@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle</title>
+</head>
+
+<!-- header -->
+<%- include('partials/header', {title: 'Movies'}) %>
+<!-- fin header -->
+
+<body>
+    <h1><%= oneMovie.title %></h1>
+    <article  class= "movie">
+    <div>
+        <h4>Fecha de lanzamiento: </h4> <p><%= oneMovie.release_date %> </p>     
+     </div> 
+    <div> 
+        <h4>Rating: </h4> <p><%= oneMovie.rating %> </p>
+     </div> 
+    <div>
+        <h4>Premios: </h4> <p><%= oneMovie.awards %> </p>
+     </div>
+    <div>
+        <h4>Duracion: </h4><p><%= oneMovie.length %> </p>
+     </div>
+     <div>
+        <h4>Genero: </h4>
+            <% if (oneMovie.genre_id != null) { %> 
+                
+                <a href="/genres/detail/<%=oneMovie.Genre.id%>" class= "boton">
+                    <p><%= oneMovie.Genre.name %> </p>
+                    </a>
+               <% }else{ %>  
+                   <p></p>
+            
+            <% } %>
+     </div>
+     <div>
+        <h4>Actores: </h4>  <% oneMovie.actores.forEach(actor => { %>
+            <a href="/actors/detail/<%=actor.id%>" class= "boton"> <p> <%= actor.first_name %> <%= actor.last_name %></p>  </a>            
+           <% }); %>     
+     </div>
+    </article>
+    <section>
+        <form action="/movies/delete/<%= oneMovie.id %>?_method=DELETE" method="POST">
+        <button>BORRAR</button>
+        </form>
+        <a href=/movies/edit/<%=oneMovie.id%>>
+        <button>MODIFICAR</button>
+        </a>
+    </section>
+</body>
+</html>

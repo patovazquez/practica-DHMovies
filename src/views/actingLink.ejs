@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle</title>
+</head>
+
+<!-- header -->
+<%- include('partials/header', {title: 'Movies'}) %>
+<!-- fin header -->
+
+<body>
+    <div class= "create">
+    <form action="/actors/acting" method="POST" class= "create">
+               
+        <label for="Movie">Pelicula</label>
+        <select name="movies">
+            <% movies.forEach(movie => { %>
+            <option value= <%= movie.id %>> <%= movie.title %></option>                
+           <% }); %>
+        </select>
+
+        <label for="Actores">Actores</label>
+        <select name="actores" multiple class= "multiple">
+            <% actors.forEach(actor => { %>
+            <option value= "<%= actor.id %>"> <%= actor.first_name %> <%= actor.last_name %>
+            </option>                
+           <% }); %>
+        </select>
+
+        <button type="submit">Guardar Actuación</button>
+
+    </form>
+    </div>
+</body>
+</html>

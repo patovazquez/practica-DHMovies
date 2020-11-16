@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle</title>
+</head>
+
+<!-- header -->
+<%- include('partials/header', {title: 'Movies'}) %>
+<!-- fin header -->
+
+<body>
+    <h1><%= oneGenre.name %> </h1>
+    <article  class= "movie">
+        
+     <div class = "generos">
+        <h4>Peliculas: </h4>  <% oneGenre.Movies.forEach(movie => { %>
+            <a href="/movies/detail/<%=movie.id%>" class= "boton"> <p> <%= movie.title %> </p>              
+           <% }); %>    
+            </a>
+     </div>
+    </article>
+ 
+</body>
+</html>

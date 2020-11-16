@@ -1,0 +1,129 @@
+body {
+  margin-top: 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(59, 59, 59);
+}
+h1{
+  margin: 5px;
+  color: whitesmoke;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+input.busqueda{
+  margin-right: 10px;
+  padding: 10px;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+  width: 70%;
+}
+p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+a {text-decoration: none;
+  color: black;
+}
+a.ali{
+  display:flex;
+  
+  align-items: center;
+  width: 100%;
+}
+a.boton{
+  background-color: rgb(211, 208, 208);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+}
+form.busqueda{ 
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+button {
+  position: relative;
+  background-color: #fa8273;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+  vertical-align: middle;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+ 
+}
+button:hover {
+  box-shadow: 1px 1px 10px 7px rgba(112, 9, 9, 0.4);
+  background-color: white;
+}
+select{
+  padding: 10px;
+  outline: none;
+  border: 0;
+  border-radius: 5px;  
+}
+ul{
+  list-style-type: none;
+  background-color: grey;
+  border-radius: 10px; 
+  padding: 15px;
+}
+li{
+  background-color: rgb(216, 216, 216);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  transition: scale 0.5s; 
+}
+li:hover{
+  scale: 110%;
+}
+article{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+}
+div{
+  display: flex;
+}
+div.generos{
+  flex-direction: column;
+}
+h4{
+  margin: 10px;
+}
+
+form.create {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+div.create{
+  background-color: grey;
+  border-radius: 10px; 
+  padding: 8px;
+  width: 30%;
+}
+label{
+  margin: 3px
+}
+select.multiple {
+  height: 60px;
+}
+section{
+  display: flex
+}
+
+/* query = form { flex-wrap: wrap, justify-content: center,  } select {margin-top: 10px

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtradas</title>
+</head>
+<!-- header -->
+<%- include('partials/header', {title: 'Movies'}) %>
+<!-- fin header -->
+
+<body>
+    <h1>Resultados</h1>
+    <ul>
+        <% movies.forEach(movie => { %>
+            <li> <a href="/movies/detail/<%=movie.id%>" class= "ali">
+                <%= movie.title%>  <!-- <%=orden%> -->
+            </a>
+            </li>
+            
+        <% }); %>
+        <% if ( movies.length == 0) { %>   
+			<div class="col-12">
+				<h2 style="color: rgb(78, 22, 12);">No hay peliculas que coincidan con su búsqueda</h2>
+			</div>
+        <% } else { }%>                
+            
+    </ul>
+</body>
+</html>

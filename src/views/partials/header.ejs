@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+
+<header class="main-header">
+    
+<nav>
+<a href="/" class="pagina__inicio">
+<button>INICIO</button>
+</a>
+<a href="/movies" class= "inicio">
+<button>PELICULAS</button>
+</a>
+<a href="/movies/new" class= "inicio"><button>ESTRENOS</button>
+</a>
+<a href="/movies/recommended" class= "inicio">
+<button>RECOMENDADAS</button>
+</a>
+<a href="/actors" class= "inicio">
+    <button>ACTORES</button>
+    </a>
+    <a href="/genres" class= "inicio">
+        <button>GENEROS</button>
+        </a>
+<a href="/movies/create" class= "inicio">
+    <button>CREAR</button>
+    </a>
+    <a href="/actors/acting" class= "inicio">
+        <button>ACTUACIÓN</button>
+        </a>
+<form action="/movies/search" method="POST" class="busqueda">
+    <input  class= "busqueda" type="text" name="pelicula" placeholder="Buscar peliculas" >
+    
+    <select name="Orden" id="orden" onchange="getSelectValue();">
+        <option selected value="title"> Ordenar por </option>
+            <option value="release_date" >Estreno</option> 
+            <option value="rating" >Rating</option> 
+            <option value="awards">Premios</option> 
+            <option value="length">Duración</option> 
+    </select>                         
+    <button type="submit" ><i>ENVIAR</i></button>
+    <script>
+        
+        function getSelectValue(){ 
+            var selectedValue = document.getElementById("orden").value;
+        }
+        getSelectValue();
+
+    </script>
+</form>
+
+</nav>
+
+</header>
+<body>    
+</body>
+</html>
