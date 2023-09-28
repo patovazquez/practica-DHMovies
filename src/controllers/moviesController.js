@@ -35,6 +35,22 @@ module.exports = {
                 console.log(error)
             }    
     },
+    calendar: async (req, res) => {
+        try {
+            const fechaHoy = moment().calendar("MMM Do YY"); /*esto agrega la fecha de hoy*/
+            const fechaHoyOk = moment(fechaHoy).format("DD-MM-YYYY")
+            const movies = await Movie.findAll({
+              
+                order: [
+                    ["release_date", "DESC"]
+                ]
+            
+            })            
+            res.render("calendar",{movies: movies, fechaHoyOk})    
+            }catch(error){
+                console.log(error)
+            }    
+    },
     recom: async (req, res) => {
         try {
             const movies = await Movie.findAll({

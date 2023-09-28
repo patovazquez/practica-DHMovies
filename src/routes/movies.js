@@ -9,6 +9,7 @@ let { check, validationResult, body } = require('express-validator');
 router.get('/', moviesController.all);
 router.get('/detail/:idMovie', moviesController.detail);
 router.get('/new', moviesController.new);
+router.get('/calendar', moviesController.calendar); /*ruta que lleva al calendario*/
 router.get('/recommended', moviesController.recom);
 router.post('/search', moviesController.search);
 router.get('/create', moviesController.create);
